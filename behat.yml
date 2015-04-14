@@ -11,7 +11,7 @@ default:
         - Drupal\DrupalExtension\Context\DrushContext
   extensions:
     Behat\MinkExtension:
-      base_url: http://revamp.dev
+      base_url: http://localhost
       selenium2:
         ## Need to set this for selenium testing
         #wd_host:
