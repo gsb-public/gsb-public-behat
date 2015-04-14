@@ -22,12 +22,18 @@ default:
       drupal:
         drupal_root: '/var/www/html'
 
-local:
+api_local:
+  gherkin:
+    filters:
+      tags: @api
   extensions:
     Behat\MinkExtension:
       goutte: ~
 
 js_local:
+  gherkin:
+    filters:
+      tags: @javascript
   extensions:
     Behat\MinkExtension:
       selenium2:
