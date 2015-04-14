@@ -1,6 +1,8 @@
 default:
   suites:
     default:
+      paths:
+        - %paths.base%/features/gsb-public-behat-tests
       contexts:
         - FeatureContext
         - Drupal\DrupalExtension\Context\DrupalContext
@@ -9,8 +11,47 @@ default:
         - Drupal\DrupalExtension\Context\DrushContext
   extensions:
     Behat\MinkExtension:
-      goutte: ~
-      selenium2: ~
-      base_url: http://seven.l
+      base_url: http://revamp.dev
+      selenium2:
+        ## Need to set this for selenium testing
+        #wd_host:
+
     Drupal\DrupalExtension:
       blackbox: ~
+      api_driver: 'drupal'
+      drupal:
+        drupal_root: '/var/www/html'
+
+local:
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+
+js_local:
+  extensions:
+    Behat\MinkExtension:
+      selenium2:
+        wd_host: http://localhost:4444/wd/hub
+
+chrome_windows8:
+  gherkin:
+    filters:
+      tags: @chrome&&~@dev
+  extensions:
+    Behat\MinkExtension:
+      selenium2:
+        browser: chrome
+        capabilities:
+          name: Google search Test Chrome
+          platform: Windows 8.1
+          version: 39.0
+
+ie_windows8:
+  extensions:
+    Behat\MinkExtension:
+      selenium2:
+        browser: internet explorer
+        capabilities:
+          name: Google search Test IE
+          platform: Windows 2012
+          version: 11.0
