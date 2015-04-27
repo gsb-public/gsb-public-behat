@@ -34,10 +34,6 @@ default:
         footer: '#footer'
         legal: '#legal'
 
-regions[content_bottom] = Bottom content
-
-
-
 api_local:
   gherkin:
     filters:
