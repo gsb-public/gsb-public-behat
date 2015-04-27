@@ -21,6 +21,22 @@ default:
       api_driver: 'drupal'
       drupal:
         drupal_root: '/var/www/html'
+      region_map:
+        navigation: '#navigation'
+        header: '#header'
+        banner: '#banner'
+        utility: '#utility'
+        content: '#content'
+        sidebar: '#sidebar'
+        help: '#help'
+        highlighted: '#highlighted'
+        bottom: '#bottom'
+        footer: '#footer'
+        legal: '#legal'
+
+regions[content_bottom] = Bottom content
+
+
 
 api_local:
   gherkin:
